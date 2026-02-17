@@ -45,7 +45,7 @@ class Checker:
         criteria = Criteria_Class(country, cn)
         return self.check_for_cn(criteria)
 
-# --- Web app (Flask) ---
+# --- Flask Web App ---
 app = Flask(__name__)
 checker = Checker()
 
