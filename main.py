@@ -19,7 +19,7 @@ class Criteria_Class:
 
 class Checker:
     def __init__(self):
-        self.df = pd.read_csv("ddb_sorted.csv")
+        self.df = pd.read_csv("OGN.csv")
 
     ##Check if the comp number exists in that country
     def check_for_cn(self, criteria):

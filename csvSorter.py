@@ -124,7 +124,7 @@ PREFIX_TO_COUNTRY = {
         "ZU": "South Africa"
     }
 
-df = pd.read_csv('ddb.csv', quotechar="'")
+df = pd.read_csv('convertcsv.csv', quotechar="'")
 
 ## Replace empty values with "" to prevent NaN errors
 df = df.fillna("")
@@ -133,6 +133,10 @@ df = df.fillna("")
 def remove_no_comp_num(df):
     df = df[df["CN"] != ""]
     return df
+
+##Remove hanggliders and paragliders
+unregistered_aircraft = ["HANGGLIDER", "PARAGLIDER", "UNKNOWN", "TOWPLANE", "HELICOPTER", "GROUND STATION", "OTHER",
+                         "EXPERIMENTAL", "ULTRALIGHT"]
 
 ##Add hyphens to registrations
 def hyphenate(df):
@@ -222,7 +226,15 @@ def remove_unregistered(df):
 
         return bool(_REG_RE.fullmatch(s))
 
+    # Filter by registration
     df = df[df["REGISTRATION"].apply(is_registered)]
+
+    # Filter by aircraft model if column exists
+    if "AIRCRAFT_MODEL" in df.columns:
+        df = df[~df["AIRCRAFT_MODEL"].str.upper().isin(unregistered_aircraft)]
+    elif "devices/aircraft_model" in df.columns:
+        df = df[~df["devices/aircraft_model"].str.upper().isin(unregistered_aircraft)]
+
     return df
 
 def sort_by_cn(df):
@@ -242,9 +254,10 @@ def get_country_from_reg(reg):
 # Processing Pipeline
 df = remove_no_comp_num(df)
 df = hyphenate(df)
+df = remove_unregistered(df)
 # Populate the new COUNTRY column
 df["COUNTRY"] = df["REGISTRATION"].apply(get_country_from_reg)
 
 # Sort and Save
 df = df.sort_values(by=["CN"])
-df.to_csv('ddb_sorted.csv', index=False)
+df.to_csv('OGN.csv', index=False)
