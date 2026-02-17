@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comp Number Checker</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .row { margin-bottom: 1rem; }
+        label { display: inline-block; width: 140px; }
+        input[type="text"], textarea { padding: 0.5rem; width: 260px; }
+        button { padding: 0.5rem 1rem; }
+        #result { height: 3rem; resize: vertical; }
+    </style>
+    <script defer src="/home.js"></script>
+    <script>
+        // Fallback if defer script fails to load
+        window.addEventListener('error', function(e){
+            const res = document.getElementById('result');
+            if (res && !res.value) res.value = 'Error loading scripts. Check server.';
+        });
+    </script>
+    <noscript>This page requires JavaScript enabled.</noscript>
+    <title>Comp Number Checker</title>
+    
+</head>
+<body>
+    <h1>Comp Number Checker</h1>
+
+    <h2> Check the OGN database to see if a glider with your chosen comp number is registered in your country.</h2>
+
+    <div class="row">
+        <label for="compNum">Comp Number:</label>
+        <input id="compNum" type="text" placeholder="Enter comp number" />
+    </div>
+
+    <div class="row">
+        <label for="country">Country:</label>
+        <input id="country" type="text" list="countries" placeholder="Start typing to filter countries" />
+        <datalist id="countries">
+            <!-- Top 50 most populated countries (approx. 2024 UN estimates) sorted alphabetically -->
+            <option value="Afghanistan"></option>
+            <option value="Algeria"></option>
+            <option value="Angola"></option>
+            <option value="Argentina"></option>
+            <option value="Bangladesh"></option>
+            <option value="Brazil"></option>
+            <option value="Cameroon"></option>
+            <option value="Canada"></option>
+            <option value="China"></option>
+            <option value="Colombia"></option>
+            <option value="Democratic Republic of the Congo"></option>
+            <option value="Egypt"></option>
+            <option value="Ethiopia"></option>
+            <option value="France"></option>
+            <option value="Germany"></option>
+            <option value="Ghana"></option>
+            <option value="India"></option>
+            <option value="Indonesia"></option>
+            <option value="Iran"></option>
+            <option value="Iraq"></option>
+            <option value="Italy"></option>
+            <option value="Japan"></option>
+            <option value="Kenya"></option>
+            <option value="Madagascar"></option>
+            <option value="Malaysia"></option>
+            <option value="Mexico"></option>
+            <option value="Morocco"></option>
+            <option value="Mozambique"></option>
+            <option value="Myanmar"></option>
+            <option value="Nepal"></option>
+            <option value="Nigeria"></option>
+            <option value="Pakistan"></option>
+            <option value="Peru"></option>
+            <option value="Philippines"></option>
+            <option value="Poland"></option>
+            <option value="Russia"></option>
+            <option value="Saudi Arabia"></option>
+            <option value="South Africa"></option>
+            <option value="South Korea"></option>
+            <option value="Spain"></option>
+            <option value="Sudan"></option>
+            <option value="Tanzania"></option>
+            <option value="Thailand"></option>
+            <option value="Turkey"></option>
+            <option value="Uganda"></option>
+            <option value="Ukraine"></option>
+            <option value="United Kingdom"></option>
+            <option value="United States"></option>
+            <option value="Uzbekistan"></option>
+            <option value="Vietnam"></option>
+            <option value="Yemen"></option>
+        </datalist>
+    </div>
+
+    <div class="row">
+        <button id="checkBtn">Check</button>
+    </div>
+
+    <div class="row">
+        <label for="result">Result:</label>
+        <textarea id="result" readonly placeholder="Click Check to see if the comp number is taken or not."></textarea>
+    </div>
+
+</body>
+</html>
