@@ -27,19 +27,22 @@ class Checker:
     def check_for_cn(self, criteria):
         # Normalize to string for robust matching
         country = str(criteria.getCountry()).strip()
+        print(country)
         target_cn = str(criteria.getCompNum()).strip()
 
         # Filter by country
         df = self.df.copy()
-        # Ensure string types for comparison
-        df["COUNTRY"] = df["COUNTRY"].astype(str)
-        df["CN"] = df["CN"].astype(str)
 
-        # Case-insensitive compare for country and exact match for CN
-        filtered = df[df["COUNTRY"].str.lower() == country.lower()]
+        # Filter by country and comp number
+        filtered = df[(df["COUNTRY"].str.lower() == country.lower()) & (df["CN"] == target_cn.upper())]
         if filtered.empty:
             return False
-        return any(filtered["CN"] == target_cn)
+
+        else:
+            registration = filtered.loc[filtered.index[0], "REGISTRATION"]
+            model = filtered.loc[filtered.index[0], "AIRCRAFT_MODEL"]
+        info = {"model": model, "registration" : registration}
+        return (info)
 
     def UI(self, cn, country):
         criteria = Criteria_Class(country, cn)
@@ -53,12 +56,12 @@ checker = Checker()
 @app.route("/")
 def home():
     # Serve the frontend HTML
-    return send_file("home.html")
+    return send_file("index.html")
 
 
-@app.route("/home.js")
+@app.route("/main.js")
 def home_js():
-    return send_file("home.js")
+    return send_file("main.js")
 
 
 @app.route("/check", methods=["POST"])
@@ -70,7 +73,7 @@ def check_endpoint():
         if comp_num is None or country is None:
             return jsonify({"error": "Missing compNum or country"}), 400
         taken = checker.UI(comp_num, country)
-        return jsonify({"taken": bool(taken)})
+        return jsonify(taken)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

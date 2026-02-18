@@ -29,7 +29,12 @@
       if (!res.ok) {
         throw new Error(data && data.error ? data.error : 'Request failed');
       }
-      resultEl.value = data.taken ? 'Comp number is TAKEN.' : 'Comp number is NOT taken.';
+      if (data.taken === false) {
+        resultEl.value = ('Comp number is available.')
+      }
+      else {
+        resultEl.value = `Comp number is taken by: ${data.model} - ${data.registration}`;
+      }
     } catch (e) {
       resultEl.value = `Error: ${e.message || e}`;
     } finally {

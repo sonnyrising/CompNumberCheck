@@ -1,4 +1,4 @@
-devices/device_type,devices/device_id,devices/aircraft_model,REGISTRATION,CN,devices/tracked,devices/identified,COUNTRY
+devices/device_type,devices/device_id,AIRCRAFT_MODEL,REGISTRATION,CN,devices/tracked,devices/identified,COUNTRY
 O,24A8C0,SZD-50 Puchacz,SP-3396,-,Y,Y,Poland
 F,DF25A8,Antares 21 E,D-KAJM,-,Y,Y,Germany
 I,406C23,Eurostar EV97,G-NILT,-,Y,Y,United Kingdom
