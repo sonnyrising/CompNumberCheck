@@ -7,9 +7,6 @@
     <list default="true" id="8af4741f-ea14-49be-b95c-83e5107d5b63" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OGN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/OGN.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csvSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/csvSearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +83,9 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="9" />
+  </component>
   <component name="RunManager">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="37cae5b9-e8b2-4949-9172-aafa37fbc09c" uri="http://localhost:63342/CompNumberChecker/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -117,7 +117,7 @@
       <workItem from="1771363190187" duration="2000" />
       <workItem from="1771363297918" duration="1101000" />
       <workItem from="1771365018649" duration="1212000" />
-      <workItem from="1771412313921" duration="1715000" />
+      <workItem from="1771412313921" duration="1881000" />
     </task>
     <servers />
   </component>
@@ -138,6 +138,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CompNumberChecker$main.coverage" NAME="main Coverage Results" MODIFIED="1771363075458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CompNumberChecker$csvSearch.coverage" NAME="csvSearch Coverage Results" MODIFIED="1771413696178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CompNumberChecker$csvSorter.coverage" NAME="csvSorter Coverage Results" MODIFIED="1771362988275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CompNumberChecker$csvSorter.coverage" NAME="csvSorter Coverage Results" MODIFIED="1771415590384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
