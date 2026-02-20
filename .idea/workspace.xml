@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="13" />
+    <option name="cachedIndexableFilesCount" value="14" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -82,8 +82,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1773867600000" />
+    <option name="spentUsd" value="0.0072545502" />
+  </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="9" />
+    <option name="suspendCountdown" value="7" />
   </component>
   <component name="RunManager">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="37cae5b9-e8b2-4949-9172-aafa37fbc09c" uri="http://localhost:63342/CompNumberChecker/index.html" useBuiltInWebServerPort="true">
@@ -118,6 +122,9 @@
       <workItem from="1771365018649" duration="1212000" />
       <workItem from="1771412313921" duration="1881000" />
       <workItem from="1771506493870" duration="359000" />
+      <workItem from="1771513637836" duration="1050000" />
+      <workItem from="1771518562295" duration="164000" />
+      <workItem from="1771556237525" duration="3000" />
     </task>
     <servers />
   </component>
