@@ -36,12 +36,12 @@ class Checker:
         # Filter by country and comp number
         filtered = df[(df["COUNTRY"].str.lower() == country.lower()) & (df["CN"] == target_cn.upper())]
         if filtered.empty:
-            return False
+            return {"taken": False}
 
         else:
             registration = filtered.loc[filtered.index[0], "REGISTRATION"]
             model = filtered.loc[filtered.index[0], "AIRCRAFT_MODEL"]
-        info = {"model": model, "registration" : registration}
+        info = {"taken": True, "model": model, "registration" : registration}
         return (info)
 
     def UI(self, cn, country):
